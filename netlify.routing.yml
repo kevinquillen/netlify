@@ -1,0 +1,15 @@
+netlify.netlify_settings:
+  path: '/admin/config/services/netlify-settings'
+  defaults:
+    _title: 'Netlify settings'
+    _form: 'Drupal\netlify\Form\NetlifySettingsForm'
+  requirements:
+    _permission: 'administer site configuration'
+
+netlify.trigger_build_confirm:
+  path: '/admin/config/development/performance/netlify'
+  defaults:
+    _title: 'Trigger Netlify Build'
+    _form: 'Drupal\netlify\Form\TriggerBuildConfirmForm'
+  requirements:
+    _permission: 'administer site configuration'

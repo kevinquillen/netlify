@@ -1,0 +1,5 @@
+netlify.netlify_settings:
+  title: Netlify settings
+  description: Settings for interacting with Netlify.
+  parent: system.admin_config_services
+  route_name: netlify.netlify_settings

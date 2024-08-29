@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * @file
+ * Contains procedural hooks for the module.
+ */
+
+use Drupal\Core\Entity\ContentEntityInterface;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\netlify\Event\ContentEntityEvent;
+use Drupal\netlify\NetlifyEvents;
+
+/**
+ * Implements hook_entity_presave().
+ */
+function netlify_entity_presave(EntityInterface $entity) {
+  if ($entity instanceof ContentEntityInterface) {
+    $event = new ContentEntityEvent($entity);
+    $event_dispatcher = \Drupal::service('event_dispatcher');
+    $event_dispatcher->dispatch($event, NetlifyEvents::CONTENT_ENTITY_SAVE);
+  }
+}

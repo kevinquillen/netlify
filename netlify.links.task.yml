@@ -1,0 +1,5 @@
+netlify.webhook:
+  route_name: netlify.trigger_build_confirm
+  title: 'Netlify Build'
+  base_route: system.performance_settings
+  weight: 3

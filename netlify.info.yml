@@ -1,0 +1,4 @@
+name: Netlify Integration
+type: module
+description: Handles communication to Netlify for background events.
+core_version_requirement: ^10 || ^11

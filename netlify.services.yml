@@ -1,0 +1,9 @@
+services:
+  netlify.webhook:
+    class: Drupal\netlify\Webhook
+    arguments: ['@config.factory', '@http_client']
+  netlify.event_subscriber:
+    class: Drupal\netlify\EventSubscriber\NetlifySubscriber
+    arguments: ['@netlify.webhook']
+    tags:
+      - { name: event_subscriber }
